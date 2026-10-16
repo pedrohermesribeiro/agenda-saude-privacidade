@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+  Proposta de atualização para o repositório público:
+  https://github.com/pedrohermesribeiro/agenda-saude-privacidade
+  Copiar o conteúdo para index.html e publicar no GitHub Pages quando autorizado.
+  Não afirmar criptografia própria do aplicativo.
+-->
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -35,7 +41,7 @@
     <p>Informações sobre dados pessoais, dados de saúde e seu uso no aplicativo.</p>
   </div></header>
   <main>
-    <p class="meta"><strong>Última atualização:</strong> 16 de outubro de 2026 · <strong>Versão analisada:</strong> 1.6.0</p>
+    <p class="meta"><strong>Última atualização:</strong> 16 de outubro de 2026 · <strong>Versão analisada:</strong> 1.6.1 (e posteriores com backup automático desativado)</p>
     <p>Esta Política de Privacidade descreve como o aplicativo <strong>Agenda Saúde</strong>, disponibilizado por <strong>Pedro Hermes Apps</strong>, lida com informações inseridas para organização de cuidados de saúde pessoais e familiares. Dúvidas sobre privacidade podem ser encaminhadas a <a href="mailto:pedrohermesrib@gmail.com">pedrohermesrib@gmail.com</a>.</p>
 
     <h2>1. Quais informações podem ser registradas</h2>
@@ -50,39 +56,44 @@
     <p>O aplicativo também armazena a preferência visual de tema. Algumas informações inseridas podem constituir <strong>dados pessoais sensíveis de saúde</strong>. Recomenda-se cadastrar apenas informações necessárias e ter autorização adequada para inserir dados de outras pessoas.</p>
 
     <h2>2. Para que os dados são usados</h2>
-    <p>Os dados são usados no próprio dispositivo para organizar o acompanhamento, apresentar agenda e diário, controlar doses e estoque de medicamentos e gerar relatórios solicitados pelo usuário. A versão analisada não inclui login, contas de usuário, sincronização entre aparelhos ou serviço próprio de armazenamento em nuvem.</p>
+    <p>Os dados são usados no próprio dispositivo para organizar o acompanhamento, apresentar agenda e diário, controlar doses e estoque de medicamentos e gerar relatórios solicitados pelo usuário. Não há login, contas de usuário, sincronização entre aparelhos nem serviço próprio de armazenamento em nuvem operado pelo desenvolvedor.</p>
 
     <h2>3. Armazenamento e acesso</h2>
-    <p>Os registros são armazenados principalmente em um banco <strong>SQLite local</strong>, na área de dados do aplicativo no dispositivo Android. A preferência de tema é armazenada localmente. O aplicativo não implementa, nessa versão, uma camada própria de criptografia do banco de dados nem bloqueio por senha ou biometria. O acesso depende das proteções oferecidas pelo dispositivo e pelo sistema operacional.</p>
+    <p>Os registros são armazenados principalmente em um banco <strong>SQLite local</strong> (<code>agenda-saude.db</code>), na área de dados do aplicativo no dispositivo Android. A preferência de tema é armazenada localmente. O aplicativo não implementa, nessa versão, uma camada própria de criptografia do banco de dados nem bloqueio por senha ou biometria. O acesso depende das proteções oferecidas pelo dispositivo e pelo sistema operacional.</p>
     <p class="notice"><strong>Importante:</strong> mantenha o dispositivo protegido por bloqueio de tela. Evite disponibilizar o aparelho desbloqueado a pessoas não autorizadas, especialmente se contiver registros de saúde de familiares.</p>
 
-    <h2>4. Coleta automática e conexões externas</h2>
-    <p>Na versão 1.6.0 analisada, o aplicativo não implementa envio automático de prontuários ou registros de saúde a servidores do desenvolvedor, nem inclui funcionalidades próprias de anúncios ou ferramentas de análise de uso. Os recursos principais de cadastro, consulta e acompanhamento funcionam localmente, sem necessidade de conexão com um servidor do aplicativo.</p>
+    <h2>4. Backup automático do Android</h2>
+    <p>A partir das versões publicadas com esta política (a partir da <strong>1.6.1</strong>), o Agenda Saúde declara <strong>backup automático desativado</strong> (<code>android:allowBackup=false</code>) e utiliza regras do sistema para excluir banco de dados, preferências e arquivos do aplicativo de backups na nuvem e de transferências automáticas entre dispositivos, quando o Android aplicar essas regras.</p>
+    <p>Isso significa que o desenvolvedor <strong>não</strong> oferece cópia na nuvem dos registros de saúde. Versões anteriores instaladas antes dessa atualização podem ter se comportado de forma diferente se o backup automático do Android estivesse ativo no aparelho.</p>
+    <p>O comportamento exato pode variar conforme fabricante, versão do Android e configurações do usuário. Ferramentas externas (por exemplo, backup via computador) fogem ao controle desta política.</p>
+
+    <h2>5. Coleta automática e conexões externas</h2>
+    <p>O aplicativo não implementa envio automático de prontuários ou registros de saúde a servidores do desenvolvedor, nem inclui funcionalidades próprias de anúncios ou ferramentas de análise de uso. Os recursos principais de cadastro, consulta e acompanhamento funcionam localmente, sem necessidade de conexão com um servidor do aplicativo.</p>
     <p>O sistema Android, a Google Play e serviços eventualmente acionados pelo usuário podem tratar dados técnicos de acordo com suas próprias políticas, fora do controle direto do Agenda Saúde.</p>
 
-    <h2>5. Relatórios e compartilhamento</h2>
+    <h2>6. Relatórios e compartilhamento</h2>
     <p>O usuário pode gerar, imprimir ou compartilhar relatórios contendo informações selecionadas, inclusive dados de saúde, por meio de PDF e recursos do sistema. O compartilhamento é <strong>iniciado pelo próprio usuário</strong>, que escolhe o aplicativo ou destino, como e-mail, mensageiro ou serviço de arquivos.</p>
-    <p>Após o envio ou salvamento fora do Agenda Saúde, o arquivo poderá ficar sujeito às práticas de privacidade e retenção do destinatário ou serviço escolhido. Avalie com cuidado o conteúdo antes de compartilhar. PDFs e cópias salvos externamente não são apagados automaticamente pelo Agenda Saúde.</p>
+    <p>O PDF serve para consulta e arquivo; <strong>não restaura</strong> o banco de dados do Agenda Saúde em outro aparelho. Após o envio ou salvamento fora do Agenda Saúde, o arquivo poderá ficar sujeito às práticas de privacidade e retenção do destinatário ou serviço escolhido.</p>
 
-    <h2>6. Retenção, alteração e exclusão</h2>
+    <h2>7. Retenção, alteração e exclusão</h2>
     <p>Os registros locais permanecem no dispositivo enquanto os dados do aplicativo forem mantidos. A interface permite atualizar determinados registros e <strong>inativar</strong> alguns cadastros; a inativação não equivale à exclusão definitiva do respectivo registro no banco.</p>
-    <p>Esta versão não possui comando dentro do aplicativo para apagar integralmente todos os dados de todas as categorias. Para remover o armazenamento local do aplicativo, o usuário pode utilizar o recurso do Android para <strong>limpar os dados do aplicativo</strong> ou desinstalá-lo. Essas operações podem resultar em perda irreversível das informações locais.</p>
-    <p>Dependendo das configurações do Android, poderão existir cópias em backups ou restaurações gerenciados pelo sistema. Arquivos exportados ou compartilhados permanecem sujeitos ao armazenamento do destino escolhido e precisam ser excluídos nesses locais separadamente.</p>
+    <p>Não há comando dentro do aplicativo para apagar integralmente todos os dados de todas as categorias. Para remover o armazenamento local, o usuário pode utilizar o recurso do Android para <strong>limpar os dados do aplicativo</strong> ou desinstalá-lo. Essas operações podem resultar em <strong>perda irreversível</strong> das informações locais.</p>
+    <p>Com backup automático do app desativado, não deve haver restauração automática dos registros do Agenda Saúde ao reinstalar em outro aparelho pela conta Google. Arquivos PDF exportados ou compartilhados permanecem no destino escolhido e precisam ser excluídos nesses locais separadamente.</p>
 
-    <h2>7. Direitos e solicitações de privacidade</h2>
-    <p>Para solicitar esclarecimentos sobre o tratamento de dados relacionado ao aplicativo, entre em contato pelo e-mail <a href="mailto:pedrohermesrib@gmail.com">pedrohermesrib@gmail.com</a>. Como os registros da versão analisada ficam no dispositivo e não são recebidos pelo desenvolvedor por meio de servidor próprio, o desenvolvedor normalmente não tem acesso direto a eles para editá-los ou excluí-los remotamente.</p>
+    <h2>8. Direitos e solicitações de privacidade</h2>
+    <p>Para solicitar esclarecimentos sobre o tratamento de dados relacionado ao aplicativo, entre em contato pelo e-mail <a href="mailto:pedrohermesrib@gmail.com">pedrohermesrib@gmail.com</a>. Como os registros ficam no dispositivo e não são recebidos pelo desenvolvedor por meio de servidor próprio, o desenvolvedor normalmente não tem acesso direto a eles para editá-los ou excluí-los remotamente.</p>
     <p>O tratamento de informações de outras pessoas deve observar a legislação aplicável, incluindo a Lei Geral de Proteção de Dados Pessoais (LGPD), conforme as responsabilidades de quem cadastra e utiliza esses dados.</p>
 
-    <h2>8. Crianças e pessoas acompanhadas</h2>
+    <h2>9. Crianças e pessoas acompanhadas</h2>
     <p>O Agenda Saúde é uma ferramenta de organização de cuidados, inclusive familiares; não é direcionado especificamente a crianças como usuárias independentes. Quando forem registradas informações sobre crianças, adolescentes ou outras pessoas acompanhadas, quem utiliza o aplicativo deve observar as responsabilidades legais e os cuidados adicionais adequados a esses dados.</p>
 
-    <h2>9. Natureza do aplicativo</h2>
+    <h2>10. Natureza do aplicativo</h2>
     <p>O Agenda Saúde é uma ferramenta de organização e acompanhamento. Não substitui avaliação, diagnóstico, prescrição ou orientação de profissionais de saúde, nem é destinado a atendimento de emergências.</p>
 
-    <h2>10. Atualizações desta política</h2>
-    <p>Esta Política de Privacidade poderá ser atualizada quando houver mudanças nas funcionalidades, nos fluxos de dados ou nas exigências aplicáveis. A data de atualização será indicada nesta página. Mudanças relevantes no tratamento de informações deverão ser refletidas na documentação pública e, quando necessário, no aplicativo.</p>
+    <h2>11. Atualizações desta política</h2>
+    <p>Esta Política de Privacidade poderá ser atualizada quando houver mudanças nas funcionalidades, nos fluxos de dados ou nas exigências aplicáveis. A data de atualização será indicada nesta página (<a href="https://pedrohermesribeiro.github.io/agenda-saude-privacidade/">https://pedrohermesribeiro.github.io/agenda-saude-privacidade/</a>). Mudanças relevantes no tratamento de informações deverão ser refletidas na documentação pública e, quando necessário, no aplicativo.</p>
 
-    <h2>11. Contato</h2>
+    <h2>12. Contato</h2>
     <p><strong>Aplicativo:</strong> Agenda Saúde<br><strong>Publicador:</strong> Pedro Hermes Apps<br><strong>E-mail:</strong> <a href="mailto:pedrohermesrib@gmail.com">pedrohermesrib@gmail.com</a></p>
   </main>
   <footer><div>© 2026 Pedro Hermes Apps · Política de Privacidade do Agenda Saúde.</div></footer>
